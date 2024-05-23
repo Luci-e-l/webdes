@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ListenLux</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Listen Lux</h1>
+        <a href="HomePage.html">Home</a>
+        <a href="AboutUs.html">About Us</a>
+        <a href="ContactUs.html">Contact Us</a>
+        <div class="cart">
+            <span>Cart (<span id="cart-count">0</span>)</span>
+            <div id="cart-items" class="cart-items"></div>
+        </div>
+    </header>
+    <main>
+        <div class="product">
+            <img src="tws1.png" alt="Product 1">
+            <h2>JBL Wave 200TWS</h2>
+            <p>Price: $10</p>
+            <button onclick="addToCart('Product 1', 10)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="tws2.png" alt="Product 2">
+            <h2>JBL Live Pro+ TWS</h2>
+            <p>Price: $20</p>
+            <button onclick="addToCart('Product 2', 20)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="tws3.png" alt="Product 3">
+            <h2>JBL Tune 230NC TWS</h2>
+            <p>Price: $20</p>
+            <button onclick="addToCart('Product 3', 20)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="tws4.png" alt="Product 4">
+            <h2>JBL Live Pro 2 TWS</h2>
+            <p>Price: $20</p>
+            <button onclick="addToCart('Product 4', 20)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="tws5.png" alt="Product 5">
+            <h2>JBL Quantum TWS</h2>
+            <p>Price: $20</p>
+            <button onclick="addToCart('Product 5', 20)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="tws6.png" alt="Product 6">
+            <h2>JBL Tune Buds</h2>
+            <p>Price: $20</p>
+            <button onclick="addToCart('Product 6', 20)">Add to Cart</button>
+        </div>
+        <!-- Add more products as needed -->
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>
