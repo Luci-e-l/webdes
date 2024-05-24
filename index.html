@@ -8,8 +8,8 @@
 <body>
     <header>
         <h1>Listen Lux</h1>
-        <a href="HomePage.html">Home</a>
-        <a href="AboutUs.html">About Us</a>
+        <a href="#AboutUs">About Us</a>
+        <a href="#product">Products</a>
         <a href="ContactUs.html">Contact Us</a>
         <div class="cart">
             <span>Cart (<span id="cart-count">0</span>)</span>
@@ -17,6 +17,13 @@
         </div>
     </header>
     <main>
+        <section id="AboutUs">
+            <b>About Us</b>
+            <p>
+Welcome to ListenLux, your go-to destination for premium True Wireless Stereo Earbuds. We're dedicated to delivering high-quality audio solutions straight to your doorstep, offering a seamless online shopping experience tailored to your needs. With ListenLux, finding the perfect earbuds is easy and convenient. Browse our curated selection, select your favorites, and enjoy the comfort of shopping from home. Join us in experiencing the perfect harmony of style, comfort, and exceptional sound quality.
+            </p>
+        </section>
+        <section id="product">
         <div class="product">
             <img src="tws1.png" alt="Product 1">
             <h2>JBL Wave 200TWS</h2>
@@ -53,6 +60,7 @@
             <p>Price: $10</p>
             <button onclick="addToCart('Product 6', 20)">Add to Cart</button>
         </div>
+        </section>
     </main>
     <script src="scripts.js"></script>
 </body>
