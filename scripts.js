@@ -42,7 +42,7 @@ function showReceipt() {
     totalP.innerHTML = <strong>Total: $${total}</strong>;
     receipt.appendChild(totalP);
 
-    document.getElementById('receipt-popup').style.display = 'flex';
+    document.getElementById('receipt-popup').style.display = 'block';
 }
 
 function closeReceipt() {
