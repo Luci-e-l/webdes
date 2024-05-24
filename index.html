@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,9 +9,11 @@
 <body>
     <header>
         <h1>Listen Lux</h1>
-        <a href="#AboutUs">About Us</a>
-        <a href="#Product">Products</a>
-        <a href="#ContactUs">Contact Us</a>
+        <nav>
+            <a href="#AboutUs">About Us</a>
+            <a href="#Product">Products</a>
+            <a href="#ContactUs">Contact Us</a>
+        </nav>
         <div class="cart">
             <span>Cart (<span id="cart-count">0</span>)</span>
             <div id="cart-items" class="cart-items"></div>
@@ -19,60 +22,61 @@
     <main>
         <section id="AboutUs">
             <div class="about">
-            <b>About Us</b>
-            <p>
-Welcome to ListenLux, your go-to destination for premium True Wireless Stereo Earbuds. We're dedicated to delivering high-quality audio solutions straight to your doorstep, offering a seamless online shopping experience tailored to your needs. With ListenLux, finding the perfect earbuds is easy and convenient. Browse our curated selection, select your favorites, and enjoy the comfort of shopping from home. Join us in experiencing the perfect harmony of style, comfort, and exceptional sound quality.
-            </p>
+                <b>About Us</b>
+                <p>
+                    Welcome to ListenLux, your go-to destination for premium True Wireless Stereo Earbuds. We're dedicated to delivering high-quality audio solutions straight to your doorstep, offering a seamless online shopping experience tailored to your needs. With ListenLux, finding the perfect earbuds is easy and convenient. Browse our curated selection, select your favorites, and enjoy the comfort of shopping from home. Join us in experiencing the perfect harmony of style, comfort, and exceptional sound quality.
+                </p>
+            </div>
         </section>
-        <section id="Product">
-        <div class="product">
-            <img src="tws1.png" alt="Product 1">
-            <h2>JBL Wave 200TWS</h2>
-            <p>Price: $10</p>
-            <button onclick="addToCart('Product 1', 10)">Add to Cart</button>
-        </div>
-        <div class="product">
-            <img src="tws2.png" alt="Product 2">
-            <h2>JBL Live Pro+ TWS</h2>
-            <p>Price: $20</p>
-            <button onclick="addToCart('Product 2', 20)">Add to Cart</button>
-        </div>
-        <div class="product">
-            <img src="tws3.png" alt="Product 3">
-            <h2>JBL Tune 230NC TWS</h2>
-            <p>Price: $15</p>
-            <button onclick="addToCart('Product 3', 20)">Add to Cart</button>
-        </div>
-        <div class="product">
-            <img src="tws4.png" alt="Product 4">
-            <h2>JBL Live Pro 2 TWS</h2>
-            <p>Price: $25</p>
-            <button onclick="addToCart('Product 4', 20)">Add to Cart</button>
-        </div>
-        <div class="product">
-            <img src="tws5.png" alt="Product 5">
-            <h2>JBL Quantum TWS</h2>
-            <p>Price: $20</p>
-            <button onclick="addToCart('Product 5', 20)">Add to Cart</button>
-        </div>
-        <div class="product">
-            <img src="tws6.png" alt="Product 6">
-            <h2>JBL Tune Buds</h2>
-            <p>Price: $10</p>
-            <button onclick="addToCart('Product 6', 20)">Add to Cart</button>
-        </div>
+        <section id="Product" class="products">
+            <div class="product">
+                <img src="tws1.png" alt="Product 1">
+                <h2>JBL Wave 200TWS</h2>
+                <p>Price: $10</p>
+                <button onclick="addToCart('Product 1', 10)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="tws2.png" alt="Product 2">
+                <h2>JBL Live Pro+ TWS</h2>
+                <p>Price: $20</p>
+                <button onclick="addToCart('Product 2', 20)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="tws3.png" alt="Product 3">
+                <h2>JBL Tune 230NC TWS</h2>
+                <p>Price: $15</p>
+                <button onclick="addToCart('Product 3', 20)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="tws4.png" alt="Product 4">
+                <h2>JBL Live Pro 2 TWS</h2>
+                <p>Price: $25</p>
+                <button onclick="addToCart('Product 4', 20)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="tws5.png" alt="Product 5">
+                <h2>JBL Quantum TWS</h2>
+                <p>Price: $20</p>
+                <button onclick="addToCart('Product 5', 20)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="tws6.png" alt="Product 6">
+                <h2>JBL Tune Buds</h2>
+                <p>Price: $10</p>
+                <button onclick="addToCart('Product 6', 20)">Add to Cart</button>
+            </div>
         </section>
         <section id="ContactUs">
             <div class="contact">
+                <b>Contact Us</b>
+                <p>
+                    If you have any issues or concerns, feel free to contact us on the following:
+                    Email: listenlux@gmail.com
+                    Telephone: (02) 123-4567
+                </p>
+            </div>
         </section>
     </main>
-    <script src="scripts.js">
-        <b>Contact Us</b>
-        <p>
-If you have any issues or concerns, feel free to contact us on the following:
-Email: listenlux@gmail.com
-Telephone: (02) 123-4567
-        </p>
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
