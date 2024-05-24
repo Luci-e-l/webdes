@@ -13,8 +13,11 @@
             <a href="#AboutUs">About Us</a>
             <a href="#Product">Products</a>
             <a href="#ContactUs">Contact Us</a>
-            <a href="#cart">Cart</a>
         </nav>
+        <div class="cart">
+            <span>Cart (<span id="cart-count">0</span>)</span>
+            <div id="cart-items" class="cart-items"></div>
+        </div>
     </header>
     <main>
         <section id="AboutUs">
@@ -30,40 +33,39 @@
                 <img src="tws1.png" alt="Product 1">
                 <h2>JBL Wave 200TWS</h2>
                 <p>Price: $10</p>
-                <button onclick="addToCart('JBL Wave 200TWS', 10)">Add to Cart</button>
+                <button onclick="addToCart('Product 1', 10)">Add to Cart</button>
             </div>
             <div class="product">
                 <img src="tws2.png" alt="Product 2">
                 <h2>JBL Live Pro+ TWS</h2>
                 <p>Price: $20</p>
-                <button onclick="addToCart('JBL Live Pro+ TWS', 20)">Add to Cart</button>
+                <button onclick="addToCart('Product 2', 20)">Add to Cart</button>
             </div>
             <div class="product">
                 <img src="tws3.png" alt="Product 3">
                 <h2>JBL Tune 230NC TWS</h2>
                 <p>Price: $15</p>
-                <button onclick="addToCart('JBL Tune 230NC TWS', 15)">Add to Cart</button>
+                <button onclick="addToCart('Product 3', 20)">Add to Cart</button>
             </div>
             <div class="product">
                 <img src="tws4.png" alt="Product 4">
                 <h2>JBL Live Pro 2 TWS</h2>
                 <p>Price: $25</p>
-                <button onclick="addToCart('JBL Live Pro 2 TWS', 25)">Add to Cart</button>
+                <button onclick="addToCart('Product 4', 20)">Add to Cart</button>
             </div>
             <div class="product">
                 <img src="tws5.png" alt="Product 5">
                 <h2>JBL Quantum TWS</h2>
                 <p>Price: $20</p>
-                <button onclick="addToCart('JBL Quantum TWS', 20)">Add to Cart</button>
+                <button onclick="addToCart('Product 5', 20)">Add to Cart</button>
             </div>
             <div class="product">
                 <img src="tws6.png" alt="Product 6">
                 <h2>JBL Tune Buds</h2>
                 <p>Price: $10</p>
-                <button onclick="addToCart('JBL Tune Buds', 10)">Add to Cart</button>
+                <button onclick="addToCart('Product 6', 20)">Add to Cart</button>
             </div>
         </section>
-        <br>
         <section id="ContactUs">
             <div class="contact">
                 <b>Contact Us</b>
@@ -74,35 +76,6 @@
                 </p>
             </div>
         </section>
-        <br>
-        <br>
-        <section id="cart">
-        <h2>Your Cart</h2>
-        <ul id="cart-items"></ul>
-        <div class="customer">
-            <h3>Customer Information</h3>
-            <input type="text" id="customer-name" placeholder="Name">
-            <input type="text" id="customer-address" placeholder="Address">
-            <input type="text" id="customer-contact" placeholder="Contact Number">
-            <select id="delivery-method">
-                <option value="Store Pickup">Free collect from store</option>
-                <option value="Standard shipping">Standard shipping</option>
-            </select>
-            <select id="payment-method">
-                <option value="Cash">Cash</option>
-                <option value="GCash">GCash</option>
-            </select>
-        </div>
-        <button onclick="showReceipt()">Checkout</button>
-    </section>
-
-    <div id="receipt-popup" class="popup">
-        <div class="popup-content">
-            <span class="close" onclick="closeReceipt()">&times;</span>
-            <h2>Receipt</h2>
-            <div id="receipt"></div>
-        </div>
-    </div>
     </main>
     <script src="scripts.js"></script>
 </body>
