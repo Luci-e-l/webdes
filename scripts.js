@@ -1,50 +1,220 @@
-let cart = [];
-
-function addToCart(product, price) {
-    cart.push({ product, price });
-    updateCartDisplay();
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('Bg.png'); /* Replace with the path to your image */
+    background-size: cover; /* Cover the entire area */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-attachment: fixed; /* Make the background fixed during scroll */
+    background-position: center; /* Center the image */
 }
 
-function updateCartDisplay() {
-    const cartItems = document.getElementById('cart-items');
-    cartItems.innerHTML = '';
-    cart.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = ${item.product} - $${item.price};
-        cartItems.appendChild(li);
-    });
+header {
+    background-color: rgba(85, 107, 47, 0.95);
+    color: white;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-function showReceipt() {
-    const name = document.getElementById('customer-name').value;
-    const address = document.getElementById('customer-address').value;
-    const contact = document.getElementById('customer-contact').value;
-    const delivery = document.getElementById('delivery-method').value;
-    const payment = document.getElementById('payment-method').value;
-
-    const receipt = document.getElementById('receipt');
-    receipt.innerHTML = '<h3>Customer Information</h3>';
-    receipt.innerHTML += <p>Name: ${name}</p>;
-    receipt.innerHTML += <p>Address: ${address}</p>;
-    receipt.innerHTML += <p>Contact Number: ${contact}</p>;
-    receipt.innerHTML += <p>Delivery Method: ${delivery}</p>;
-    receipt.innerHTML += <p>Payment Method: ${payment}</p>;
-    receipt.innerHTML += '<h3>Order Summary</h3>';
-
-    let total = 0;
-    cart.forEach(item => {
-        const p = document.createElement('p');
-        p.textContent = ${item.product}: $${item.price};
-        receipt.appendChild(p);
-        total += item.price;
-    });
-    const totalP = document.createElement('p');
-    totalP.innerHTML = <strong>Total: $${total}</strong>;
-    receipt.appendChild(totalP);
-
-    document.getElementById('receipt-popup').style.display = 'block';
+header nav {
+    display: flex;
+    gap: 1em;
 }
 
-function closeReceipt() {
-    document.getElementById('receipt-popup').style.display = 'none';
+header a {
+    color: white;
+    text-decoration: none; /* Optional: Remove underline */
+}
+
+header a:hover {
+    /* Optional: Add hover effect */
+    text-decoration: underline;
+}
+
+.cart {
+    position: relative;
+}
+
+.cart-items {
+    position: absolute;
+    top: 2em;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 1em;
+    display: none;
+    z-index: 1000;
+}
+
+.cart:hover .cart-items {
+    display: block;
+}
+
+main {
+    padding: 2em;
+}
+
+.about {
+    background-color: rgba(228, 216, 192, 0.35);
+    border: 1px solid #ccc;
+    padding: 1em;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: space-between;
+}
+
+.product {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    padding: 1em;
+    text-align: center;
+    width: 30%;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product h2 {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+}
+
+.product p {
+    font-size: 1em;
+    margin: 0.5em 0;
+}
+
+.product button {
+    background-color: #556B2F;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.product button:hover {
+    background-color: #6B8E23;
+}
+
+.contact {
+    background-color: rgba(228, 216, 192, 0.35);
+    border: 1px solid #ccc;
+    padding: 1em;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+#cart {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    padding: 1em;
+    text-align: center;
+}
+
+#cart h2 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#cart-items li {
+    background-color: rgba(240, 240, 240, 0.9);
+    border-bottom: 1px solid #ccc;
+    padding: 0.5em 0;
+}
+
+.customer {
+    margin-top: 1em;
+}
+
+.customer h3 {
+    margin-bottom: 0.5em;
+}
+
+.customer input, .customer select {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.customer button {
+    background-color: #556B2F;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.customer button:hover {
+    background-color: #6B8E23;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+.popup-content h2 {
+    margin-top: 0;
+}
+
+.popup-content .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.popup-content .close:hover,
+.popup-content .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.popup-content h3 {
+    margin-bottom: 0.5em;
+}
+
+.popup-content p {
+    margin: 0.5em 0;
 }
