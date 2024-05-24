@@ -106,6 +106,14 @@ button {
     margin-bottom: 2em;
 }
 
+ .customer {
+    background-color: rgba(228, 216, 192, 0.35);
+    border: 1px solid #ccc;
+    padding: 1em;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
 button:hover {
     background-color: #218838;
 }
