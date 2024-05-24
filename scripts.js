@@ -1,34 +1,50 @@
-document.addEventListener('DOMContentLoaded', () => {
-    let cart = [];
-    let cartCountElement = document.getElementById('cart-count');
-    let cartItemsElement = document.getElementById('cart-items');
+let cart = [];
 
-    window.addToCart = function(productName, productPrice) {
-        // Add product to cart array
-        cart.push({ name: productName, price: productPrice });
-        
-        // Update cart count
-        cartCountElement.innerText = cart.length;
+function addToCart(product, price) {
+    cart.push({ product, price });
+    updateCartDisplay();
+}
 
-        // Update cart items display
-        updateCartDisplay();
-    }
+function updateCartDisplay() {
+    const cartItems = document.getElementById('cart-items');
+    cartItems.innerHTML = '';
+    cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = ${item.product} - $${item.price};
+        cartItems.appendChild(li);
+    });
+}
 
-    function updateCartDisplay() {
-        // Clear existing items
-        cartItemsElement.innerHTML = '';
+function showReceipt() {
+    const name = document.getElementById('customer-name').value;
+    const address = document.getElementById('customer-address').value;
+    const contact = document.getElementById('customer-contact').value;
+    const delivery = document.getElementById('delivery-method').value;
+    const payment = document.getElementById('payment-method').value;
 
-        // Add items to cart display
-        cart.forEach(item => {
-            let itemElement = document.createElement('div');
-            itemElement.innerText = ${item.name} - $${item.price};
-            cartItemsElement.appendChild(itemElement);
-        });
+    const receipt = document.getElementById('receipt');
+    receipt.innerHTML = '<h3>Customer Information</h3>';
+    receipt.innerHTML += <p>Name: ${name}</p>;
+    receipt.innerHTML += <p>Address: ${address}</p>;
+    receipt.innerHTML += <p>Contact Number: ${contact}</p>;
+    receipt.innerHTML += <p>Delivery Method: ${delivery}</p>;
+    receipt.innerHTML += <p>Payment Method: ${payment}</p>;
+    receipt.innerHTML += '<h3>Order Summary</h3>';
 
-        // Add total price
-        let totalPrice = cart.reduce((total, item) => total + item.price, 0);
-        let totalElement = document.createElement('div');
-        totalElement.innerHTML = <strong>Total: $${totalPrice}</strong>;
-        cartItemsElement.appendChild(totalElement);
-    }
-});
+    let total = 0;
+    cart.forEach(item => {
+        const p = document.createElement('p');
+        p.textContent = ${item.product}: $${item.price};
+        receipt.appendChild(p);
+        total += item.price;
+    });
+    const totalP = document.createElement('p');
+    totalP.innerHTML = <strong>Total: $${total}</strong>;
+    receipt.appendChild(totalP);
+
+    document.getElementById('receipt-popup').style.display = 'block';
+}
+
+function closeReceipt() {
+    document.getElementById('receipt-popup').style.display = 'none';
+}
